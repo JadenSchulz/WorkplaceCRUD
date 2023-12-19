@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Employee_WPF_MVVM_CRUD.ViewModels.DepartmentEditor
+namespace Employee_WPF_MVVM_CRUD.ViewModels.EmployeeViewModels
 {
-    internal class DeptEmployeesViewModel : BaseViewModel
+    internal class EmployeeViewModel : BaseViewModel
     {
     }
 }

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Employee_WPF_MVVM_CRUD.Views.StaticViews
+namespace Employee_WPF_MVVM_CRUD.Views
 {
     /// <summary>
-    /// Interaction logic for StatusBarView.xaml
+    /// Interaction logic for LandingView.xaml
     /// </summary>
-    public partial class StatusBarView : UserControl
+    public partial class LandingView : UserControl
     {
-        public StatusBarView()
+        public LandingView()
         {
             InitializeComponent();
         }

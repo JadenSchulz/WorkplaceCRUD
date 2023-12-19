@@ -30,3 +30,4 @@ namespace Employee_WPF_MVVM_CRUD.Utilities
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+}

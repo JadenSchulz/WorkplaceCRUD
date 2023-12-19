@@ -2,8 +2,40 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Employee_WPF_MVVM_CRUD"
-             StartupUri="MainWindow.xaml">
+             xmlns:mv="clr-namespace:Employee_WPF_MVVM_CRUD.Views.MainViews"
+             xmlns:ev="clr-namespace:Employee_WPF_MVVM_CRUD.Views.EmployeeViews"
+             xmlns:dv="clr-namespace:Employee_WPF_MVVM_CRUD.Views.DepartmentViews"
+             xmlns:mvm="clr-namespace:Employee_WPF_MVVM_CRUD.ViewModels.MainViewModels"
+             xmlns:evm="clr-namespace:Employee_WPF_MVVM_CRUD.ViewModels.EmployeeViewModels"
+             xmlns:dvm="clr-namespace:Employee_WPF_MVVM_CRUD.ViewModels.DepartmentViewModels">
     <Application.Resources>
-         
+
+        <!--Main-->
+        
+        <DataTemplate DataType="{x:Type mvm:MenuViewModel}">
+            <mv:MenuView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type mvm:StatusBarViewModel}">
+            <mv:StatusBarView/>
+        </DataTemplate>
+        
+        
+
+        <!--Employee-->
+        
+        <DataTemplate DataType="{x:Type evm:EmployeeViewModel}">
+            <ev:EmployeeView/>
+        </DataTemplate>
+        
+       
+        
+        <!--Department-->
+        
+        <DataTemplate DataType="{x:Type dvm:DepartmentViewModel}">
+            <dv:DepartmentView/>
+        </DataTemplate>
+        
+        
     </Application.Resources>
 </Application>

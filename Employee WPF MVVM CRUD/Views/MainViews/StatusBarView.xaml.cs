@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Employee_WPF_MVVM_CRUD.Views.StaticViews
+namespace Employee_WPF_MVVM_CRUD.Views.MainViews
 {
     /// <summary>
-    /// Interaction logic for MenuView.xaml
+    /// Interaction logic for StatusBarView.xaml
     /// </summary>
-    public partial class MenuView : UserControl
+    public partial class StatusBarView : UserControl
     {
-        public MenuView()
+        public StatusBarView()
         {
             InitializeComponent();
         }

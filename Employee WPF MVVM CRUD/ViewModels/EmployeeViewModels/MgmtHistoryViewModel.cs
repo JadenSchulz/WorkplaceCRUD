@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Employee_WPF_MVVM_CRUD.ViewModels.EmployeeEditor
+namespace Employee_WPF_MVVM_CRUD.ViewModels.EmployeeViewModels
 {
-    internal class EmployeeViewModel : BaseViewModel
+    internal class MgmtHistoryViewModel : BaseViewModel
     {
     }
 }

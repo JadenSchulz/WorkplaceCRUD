@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Employee_WPF_MVVM_CRUD.ViewModels.EmployeeEditor
+namespace Employee_WPF_MVVM_CRUD.ViewModels.MainViewModels
 {
-    internal class TitleHistoryViewModel : BaseViewModel
+    internal class StatusBarViewModel : BaseViewModel
     {
     }
 }
