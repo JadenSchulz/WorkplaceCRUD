@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employee_WPF_MVVM_CRUD.ViewModels.DepartmentEditor
 {
-    class DeptEmployeesViewModel
+    internal class DeptEmployeesViewModel : BaseViewModel
     {
     }
 }

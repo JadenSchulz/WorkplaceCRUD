@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Employee_WPF_MVVM_CRUD.ViewModels
 {
-    class BaseViewModel : ObservableObject
+    internal class BaseViewModel : ObservableObject
     {
     }
 }

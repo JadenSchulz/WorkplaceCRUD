@@ -10,8 +10,8 @@
 
   <ItemGroup>
     <Folder Include="Models\Interfaces\" />
-    <Folder Include="Services\" />
-    <Folder Include="Views\" />
+    <Folder Include="Views\DepartmentViews\" />
+    <Folder Include="Views\EmployeeViews\" />
   </ItemGroup>
 
   <ItemGroup>

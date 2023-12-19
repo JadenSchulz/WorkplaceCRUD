@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employee_WPF_MVVM_CRUD.Models
 {
-    class ManagementRecord
+    internal class ManagementRecord
     {
         public Department Department { get; set; }
         public Employee Manager { get; set; }

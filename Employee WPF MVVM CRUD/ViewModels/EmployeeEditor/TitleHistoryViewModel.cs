@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employee_WPF_MVVM_CRUD.ViewModels.EmployeeEditor
 {
-    class TitleHistoryViewModel
+    internal class TitleHistoryViewModel : BaseViewModel
     {
     }
 }
