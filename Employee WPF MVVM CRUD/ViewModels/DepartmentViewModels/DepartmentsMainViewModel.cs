@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Employee_WPF_MVVM_CRUD.ViewModels.DepartmentViewModels
 {
-    internal class DeptEmployeesViewModel : BaseViewModel
+    internal class DepartmentsMainViewModel : BaseViewModel
     {
         private readonly NavigationStore _navigationStore;
         private readonly ViewModelFactory _viewModelFactory;
-        public DeptEmployeesViewModel(NavigationStore navigationStore, ViewModelFactory viewModelFactory)
+        public DepartmentsMainViewModel(NavigationStore navigationStore, ViewModelFactory viewModelFactory)
         {
             _navigationStore = navigationStore;
             _viewModelFactory = viewModelFactory;

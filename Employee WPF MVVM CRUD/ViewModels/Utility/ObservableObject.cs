@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Employee_WPF_MVVM_CRUD.Utilities
+namespace Employee_WPF_MVVM_CRUD.ViewModels.Utilities
 {
     /*
     * NAME : ObservableObject : INotifyPropertyChanged

@@ -9,7 +9,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
-namespace TMS.Commands
+namespace Employee_WPF_MVVM_CRUD.Commands
 {   /*
     * NAME : RelayCommand : ICommand
     * DESCRIPTION: This class simplifies the process of command binding. It is modified

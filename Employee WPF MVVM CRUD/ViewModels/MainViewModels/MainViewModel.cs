@@ -28,8 +28,16 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.MainViewModels
         public MainViewModel(NavigationStore navigationStore) 
         {
             _navigationStore = navigationStore;
+            _navigationStore.ViewModelChanged += ViewModelChanged;
+
+
             Menu = new MenuViewModel();
             StatusBar = new StatusBarViewModel();
+        }
+
+        public void ViewModelChanged()
+        {
+            NotifyPropertyChanged(CurrentViewModel);
         }
     }
 }

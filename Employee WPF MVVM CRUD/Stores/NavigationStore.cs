@@ -7,13 +7,22 @@ using System.Threading.Tasks;
 
 namespace Employee_WPF_MVVM_CRUD.Stores
 {
-    internal class NavigationStore 
+    internal class NavigationStore
     {
         private BaseViewModel _currentView;
+        public event Action? ViewModelChanged;
         public BaseViewModel CurrentViewModel
         {
             get { return _currentView; }
-            set { _currentView = value; }
+            set 
+            { 
+                _currentView = value;
+                OnViewModelChanged();
+            }
+    }
+        public void OnViewModelChanged()
+        {
+            ViewModelChanged?.Invoke();
         }
     }
 }

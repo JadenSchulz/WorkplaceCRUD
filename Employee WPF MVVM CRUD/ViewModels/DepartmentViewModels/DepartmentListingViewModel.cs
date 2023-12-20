@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employee_WPF_MVVM_CRUD.ViewModels.DepartmentViewModels
 {
-    internal class DepartmentViewModel : BaseViewModel
+    class DepartmentListingViewModel
     {
     }
 }

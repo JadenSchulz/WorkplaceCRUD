@@ -12,16 +12,19 @@ namespace Employee_WPF_MVVM_CRUD.Commands
     class NavigateCommand : BaseCommand
     {
         private readonly NavigationStore _navigationStore;
-        public event EventHandler? CanExecuteChanged;
-
-        public NavigateCommand(NavigationStore navigationStore)
+        private readonly Func<BaseViewModel> _createViewModel;
+        public NavigateCommand(NavigationStore navigationStore, Func<BaseViewModel> createViewModel)
         {
             _navigationStore = navigationStore;
+            _createViewModel = createViewModel;
         }
 
         public override void Execute(object? parameter)
         {
-            _navigationStore.CurrentViewModel = parameter as BaseViewModel;
+            _navigationStore.CurrentViewModel = _createViewModel();
         }
+
+        
+
     }
 }
