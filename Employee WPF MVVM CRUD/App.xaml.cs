@@ -1,6 +1,7 @@
 ﻿using Employee_WPF_MVVM_CRUD.Stores;
 using Employee_WPF_MVVM_CRUD.ViewModels;
 using Employee_WPF_MVVM_CRUD.ViewModels.MainViewModels;
+using Employee_WPF_MVVM_CRUD.ViewModels.Utility;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,14 +18,16 @@ namespace Employee_WPF_MVVM_CRUD
     public partial class App : Application
     {
         private readonly NavigationStore _navigationStore;
+        private readonly ViewModelFactory _viewModelFactory;
         public App()
         {
             _navigationStore = new NavigationStore();
+            _viewModelFactory = new ViewModelFactory(_navigationStore);
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            _navigationStore.CurrentViewModel = new LandingViewModel();
+            _navigationStore.CurrentViewModel = _viewModelFactory.CreateLandingViewModel();
 
             MainWindow = new MainWindow()
             {

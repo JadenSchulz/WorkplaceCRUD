@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Employee_WPF_MVVM_CRUD.Views
+namespace Employee_WPF_MVVM_CRUD.Views.EmployeeViews
 {
     /// <summary>
-    /// Interaction logic for LandingView.xaml
+    /// Interaction logic for EmployeeView.xaml
     /// </summary>
-    public partial class LandingView : UserControl
+    public partial class EmployeesMainView : UserControl
     {
-        public LandingView()
+        public EmployeesMainView()
         {
             InitializeComponent();
         }

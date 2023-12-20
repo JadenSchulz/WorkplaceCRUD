@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Employee_WPF_MVVM_CRUD.Views.EmployeeViews
+namespace Employee_WPF_MVVM_CRUD.Views.DepartmentViews
 {
     /// <summary>
-    /// Interaction logic for EmployeeView.xaml
+    /// Interaction logic for DepartmentView.xaml
     /// </summary>
-    public partial class EmployeeView : UserControl
+    public partial class DepartmentsMainView : UserControl
     {
-        public EmployeeView()
+        public DepartmentsMainView()
         {
             InitializeComponent();
         }

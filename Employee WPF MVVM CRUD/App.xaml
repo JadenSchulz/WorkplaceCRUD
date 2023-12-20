@@ -10,6 +10,11 @@
              xmlns:dvm="clr-namespace:Employee_WPF_MVVM_CRUD.ViewModels.DepartmentViewModels">
     <Application.Resources>
 
+        <!--A Style that affects all TextBlocks-->
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10px"/>
+            <Setter Property="Width" Value="100px"/>
+        </Style>
         <!--Main-->
         
         <DataTemplate DataType="{x:Type mvm:MenuViewModel}">
@@ -19,21 +24,23 @@
         <DataTemplate DataType="{x:Type mvm:StatusBarViewModel}">
             <mv:StatusBarView/>
         </DataTemplate>
-        
-        
+
+        <DataTemplate DataType="{x:Type mvm:LandingViewModel}">
+            <mv:LandingView/>
+        </DataTemplate>
 
         <!--Employee-->
         
-        <DataTemplate DataType="{x:Type evm:EmployeeViewModel}">
-            <ev:EmployeeView/>
+        <DataTemplate DataType="{x:Type evm:EmployeesMainViewModel}">
+            <ev:EmployeesMainView/>
         </DataTemplate>
         
        
         
         <!--Department-->
         
-        <DataTemplate DataType="{x:Type dvm:DepartmentViewModel}">
-            <dv:DepartmentView/>
+        <DataTemplate DataType="{x:Type dvm:DepartmentsMainViewModel}">
+            <dv:DepartmentsMainView/>
         </DataTemplate>
         
         

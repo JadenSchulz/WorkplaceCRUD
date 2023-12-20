@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Folder Include="Models\Interfaces\" />
+    <Folder Include="Utilities\" />
     <Folder Include="ViewModels\Static\" />
   </ItemGroup>
 
