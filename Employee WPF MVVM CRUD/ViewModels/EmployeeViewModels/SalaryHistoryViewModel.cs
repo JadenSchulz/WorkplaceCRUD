@@ -10,12 +10,8 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.EmployeeViewModels
 {
     internal class SalaryHistoryViewModel : BaseViewModel
     {
-        private readonly NavigationStore _navigationStore;
-        private readonly ViewModelFactory _viewModelFactory;
-        public SalaryHistoryViewModel(NavigationStore navigationStore, ViewModelFactory viewModelFactory)
+        public SalaryHistoryViewModel()
         {
-            _navigationStore = navigationStore;
-            _viewModelFactory = viewModelFactory;
         }
     }
 }

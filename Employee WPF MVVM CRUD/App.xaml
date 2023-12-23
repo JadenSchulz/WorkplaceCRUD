@@ -10,13 +10,15 @@
              xmlns:dvm="clr-namespace:Employee_WPF_MVVM_CRUD.ViewModels.DepartmentViewModels">
     <Application.Resources>
 
-        <!--A Style that affects all TextBlocks-->
+        <!--Styles-->
         <Style TargetType="Button">
-            <Setter Property="Margin" Value="10px"/>
+            <Setter Property="Margin" Value="5, 10, 5, 10"/>
             <Setter Property="Width" Value="100px"/>
         </Style>
-        <!--Main-->
+
         
+        
+        <!--Main Views-->
         <DataTemplate DataType="{x:Type mvm:MenuViewModel}">
             <mv:MenuView/>
         </DataTemplate>
@@ -29,20 +31,51 @@
             <mv:LandingView/>
         </DataTemplate>
 
+        
         <!--Employee-->
-        
-        <DataTemplate DataType="{x:Type evm:EmployeesMainViewModel}">
-            <ev:EmployeesMainView/>
+        <DataTemplate DataType="{x:Type evm:MainEmployeeViewModel}">
+            <ev:MainEmployeesView/>
         </DataTemplate>
         
-       
+        <!--Employee Listing Views-->
+        <DataTemplate DataType="{x:Type evm:EmployeeListingViewModel}">
+            <ev:EmployeeListingView/>
+        </DataTemplate>
         
+        <DataTemplate DataType="{x:Type evm:DeptHistoryViewModel}">
+            <ev:DeptHistoryView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type evm:MgmtHistoryViewModel}">
+            <ev:MgmtHistoryView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type evm:SalaryHistoryViewModel}">
+            <ev:SalaryHistoryView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type evm:TitleHistoryViewModel}">
+            <ev:TitleHistoryView/>
+        </DataTemplate>
+
         <!--Department-->
-        
-        <DataTemplate DataType="{x:Type dvm:DepartmentsMainViewModel}">
-            <dv:DepartmentsMainView/>
+        <DataTemplate DataType="{x:Type dvm:MainDepartmentViewModel}">
+            <dv:MainDepartmentsView/>
         </DataTemplate>
         
-        
+        <!--Department Listing Views-->
+        <DataTemplate DataType="{x:Type dvm:DepartmentListingViewModel}">
+            <dv:DepartmentListingView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type dvm:DeptEmployeesViewModel}">
+            <dv:DeptEmployeesView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type dvm:DeptManagersViewModel}">
+            <dv:DeptManagersView/>
+        </DataTemplate>
+
+
     </Application.Resources>
 </Application>

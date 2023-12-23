@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Employee_WPF_MVVM_CRUD.Views.EmployeeViews.EmployeesMainView"
+﻿<UserControl x:Class="Employee_WPF_MVVM_CRUD.Views.EmployeeViews.MainEmployeesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,27 +8,28 @@
              d:DesignHeight="720" d:DesignWidth="1200">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150px"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
         <DockPanel LastChildFill="false" Grid.Column="0">
             
             <StackPanel DockPanel.Dock="Top">
                 <TextBlock HorizontalAlignment="Center" FontSize="18" FontWeight="Bold">Employees</TextBlock>
-                <Button>Salary History</Button>
-                <Button>Title History</Button>
-                <Button>Mgmt History</Button>
-                <Button>Dept History</Button>
+                <Button Command="{Binding SalaryHistoryCommannd}">Salary History</Button>
+                <Button Command="{Binding TitleHistoryCommannd}">Title History</Button>
+                <Button Command="{Binding MgmtHistoryCommannd}">Mgmt History</Button>
+                <Button Command="{Binding DeptHistoryCommand}">Dept History</Button>
+                <Button Command="{Binding AllEmployeesCommand}">All Employees</Button>
             </StackPanel>
             <StackPanel DockPanel.Dock="Bottom">
 
-                <Button>Edit Departments</Button>
+                <Button Command="{Binding DepartmentsCommand}">Edit Departments</Button>
             </StackPanel>
         </DockPanel>
 
 
-        <ContentControl Grid.Column="1" Content="{Binding CurrentView}"/>
+        <ContentControl Grid.Column="1" Content="{Binding CurrentListingViewModel}"/>
 
 
     </Grid>

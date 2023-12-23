@@ -28,6 +28,40 @@ namespace Employee_WPF_MVVM_CRUD.Models
         public List<ManagementRecord>? ManagementHistory { get; set; }
         public List<SalaryRecord>? SalaryHistory { get; set; }
         public List<TitleRecord>? TitleHistory { get; set; }
-        
+
+        public Employee(
+            long employeeNumber, 
+            string firstName, 
+            string lastName, 
+            bool employed, 
+            Gender gender, 
+            int salary, 
+            string title, 
+            DateTime birthDate, 
+            DateTime hireDate, 
+            List<Department> worksIn, 
+            List<Department> manages, 
+            List<EmploymentRecord>? employmentHistory, 
+            List<ManagementRecord>? managementHistory, 
+            List<SalaryRecord>? salaryHistory, 
+            List<TitleRecord>? titleHistory)
+        {
+            EmployeeNumber = employeeNumber;
+            FirstName = firstName;
+            LastName = lastName;
+            Employed = employed;
+            Gender = gender;
+            Salary = salary;
+            Title = title;
+            BirthDate = birthDate;
+            HireDate = hireDate;
+            WorksIn = worksIn;
+            Manages = manages;
+        }
+
+        public override string ToString()
+        {
+            return $"{FirstName} + {LastName}";
+        }
     }
 }

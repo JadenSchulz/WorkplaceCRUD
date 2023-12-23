@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Employee_WPF_MVVM_CRUD.Views.EmployeeViews
 {
     /// <summary>
-    /// Interaction logic for EmployeeView.xaml
+    /// Interaction logic for MgmtHistoryViewModel.xaml
     /// </summary>
-    public partial class EmployeesMainView : UserControl
+    public partial class MgmtHistoryView : UserControl
     {
-        public EmployeesMainView()
+        public MgmtHistoryView()
         {
             InitializeComponent();
         }

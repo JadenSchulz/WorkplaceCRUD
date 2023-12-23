@@ -10,12 +10,8 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.DepartmentViewModels
 {
     internal class DeptManagersViewModel : BaseViewModel
     {
-        private readonly NavigationStore _navigationStore;
-        private readonly ViewModelFactory _viewModelFactory;
-        public DeptManagersViewModel(NavigationStore navigationStore, ViewModelFactory viewModelFactory)
+        public DeptManagersViewModel()
         {
-            _navigationStore = navigationStore;
-            _viewModelFactory = viewModelFactory;
         }
     }
 }

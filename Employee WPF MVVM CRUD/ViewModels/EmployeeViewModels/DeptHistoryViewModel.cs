@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace Employee_WPF_MVVM_CRUD.ViewModels.EmployeeViewModels
 {
-    internal class TitleHistoryViewModel : BaseViewModel
+    internal class DeptHistoryViewModel : BaseViewModel
     {
-        public TitleHistoryViewModel()
+        public DeptHistoryViewModel()
         {
+
         }
     }
 }

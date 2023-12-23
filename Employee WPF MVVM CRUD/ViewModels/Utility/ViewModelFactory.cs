@@ -23,13 +23,61 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Utility
             return new LandingViewModel(_navigationStore, this);
         }
 
+        // Main view Models
         public BaseViewModel CreateEmployeesViewModel()
         {
-            return new EmployeesMainViewModel(_navigationStore, this);
+            NavigationStore employeeListingNavigationStore = new NavigationStore()
+            {
+                CurrentViewModel = CreateEmployeeListingViewModel()
+            };
+            return new MainEmployeeViewModel(_navigationStore, employeeListingNavigationStore, this);
         }
         public BaseViewModel CreateDepartmentsViewModel()
         {
-            return new DepartmentsMainViewModel(_navigationStore, this);
+            NavigationStore departmentListingNavigationStore = new NavigationStore()
+            {
+                CurrentViewModel = CreateDepartmentListingViewModel()
+            };
+            return new MainDepartmentViewModel(_navigationStore, departmentListingNavigationStore, this);
         }
+
+        // Employee listing view models
+        public BaseViewModel CreateEmployeeListingViewModel()
+        {
+            return new EmployeeListingViewModel();
+        }
+        public BaseViewModel CreateMgmtHistoryViewModel()
+        {
+            return new MgmtHistoryViewModel();
+        }
+        public BaseViewModel CreateSalaryHistoryViewModel()
+        {
+            return new SalaryHistoryViewModel();
+        }
+        public BaseViewModel CreateTitleHistoryViewModel()
+        {
+            return new TitleHistoryViewModel();
+        }
+        public BaseViewModel CreateDeptHistoryViewModel()
+        {
+            return new DeptHistoryViewModel();
+        }
+
+        // Department listing view models
+
+        public BaseViewModel CreateDepartmentListingViewModel()
+        {
+            return new DepartmentListingViewModel();
+        }
+        public BaseViewModel CreateDeptEmployeesViewModel()
+        {
+            return new DeptEmployeesViewModel();
+        }
+        public BaseViewModel CreateDeptManagersViewModel()
+        {
+            return new DeptManagersViewModel();
+        }
+
+
     }
 }

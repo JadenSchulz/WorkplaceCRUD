@@ -35,7 +35,7 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.MainViewModels
             StatusBar = new StatusBarViewModel();
         }
 
-        public void ViewModelChanged()
+        private void ViewModelChanged()
         {
             NotifyPropertyChanged(CurrentViewModel);
         }

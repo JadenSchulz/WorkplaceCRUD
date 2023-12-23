@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Employee_WPF_MVVM_CRUD.Views.DepartmentViews
 {
     /// <summary>
-    /// Interaction logic for DepartmentView.xaml
+    /// Interaction logic for DeptManagersView.xaml
     /// </summary>
-    public partial class DepartmentsMainView : UserControl
+    public partial class DeptManagersView : UserControl
     {
-        public DepartmentsMainView()
+        public DeptManagersView()
         {
             InitializeComponent();
         }

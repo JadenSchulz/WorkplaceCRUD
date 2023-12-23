@@ -37,7 +37,7 @@ namespace Employee_WPF_MVVM_CRUD.Commands
             this.execute = execute;
         }
 
-        public RelayCommand(Action<T> execute, Func<T, bool> canExecute = null)
+        public RelayCommand(Action<T> execute, Func<T, bool> canExecute)
         {
             if (execute == null)
             {
