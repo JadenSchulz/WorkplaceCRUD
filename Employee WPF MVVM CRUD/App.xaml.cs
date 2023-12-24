@@ -1,4 +1,6 @@
-﻿using Employee_WPF_MVVM_CRUD.Stores;
+﻿using Employee_WPF_MVVM_CRUD.Services.DbConnectors;
+using Employee_WPF_MVVM_CRUD.Services.EmployeeProvider;
+using Employee_WPF_MVVM_CRUD.Stores;
 using Employee_WPF_MVVM_CRUD.ViewModels;
 using Employee_WPF_MVVM_CRUD.ViewModels.MainViewModels;
 using Employee_WPF_MVVM_CRUD.ViewModels.Utility;
@@ -19,10 +21,16 @@ namespace Employee_WPF_MVVM_CRUD
     {
         private readonly NavigationStore _navigationStore;
         private readonly ViewModelFactory _viewModelFactory;
+        private readonly DbConnectorFactory _dbConnectorFactory;
+
+        private readonly IEmployeeProvider _employeeProvider;
         public App()
         {
             _navigationStore = new NavigationStore();
-            _viewModelFactory = new ViewModelFactory(_navigationStore);
+            _dbConnectorFactory = new DbConnectorFactory("127.0.0.1", 3306, "root", "Pwd12345", "employees");
+            _employeeProvider = new DbEmployeeProvider(_dbConnectorFactory);
+
+            _viewModelFactory = new ViewModelFactory(_navigationStore, _employeeProvider);
         }
 
         protected override void OnStartup(StartupEventArgs e)

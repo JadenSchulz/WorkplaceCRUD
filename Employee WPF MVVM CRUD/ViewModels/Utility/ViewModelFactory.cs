@@ -1,4 +1,5 @@
-﻿using Employee_WPF_MVVM_CRUD.Stores;
+﻿using Employee_WPF_MVVM_CRUD.Services.EmployeeProvider;
+using Employee_WPF_MVVM_CRUD.Stores;
 using Employee_WPF_MVVM_CRUD.ViewModels.DepartmentViewModels;
 using Employee_WPF_MVVM_CRUD.ViewModels.EmployeeViewModels;
 using Employee_WPF_MVVM_CRUD.ViewModels.MainViewModels;
@@ -13,9 +14,11 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Utility
     internal class ViewModelFactory
     {
         private readonly NavigationStore _navigationStore;
-        public ViewModelFactory(NavigationStore navigationStore) 
+        private readonly IEmployeeProvider _employeeProvider;
+        public ViewModelFactory(NavigationStore navigationStore, IEmployeeProvider employeeProvider) 
         { 
             _navigationStore = navigationStore;
+            _employeeProvider = employeeProvider;
         }
 
         public BaseViewModel CreateLandingViewModel()
@@ -44,7 +47,7 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Utility
         // Employee listing view models
         public BaseViewModel CreateEmployeeListingViewModel()
         {
-            return new EmployeeListingViewModel();
+            return new EmployeeListingViewModel(_employeeProvider);
         }
         public BaseViewModel CreateMgmtHistoryViewModel()
         {

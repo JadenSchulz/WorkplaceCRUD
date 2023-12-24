@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Employee_WPF_MVVM_CRUD.ViewModels.DepartmentViewModels
+namespace Employee_WPF_MVVM_CRUD.Services.EmployeeCreator
 {
-    internal class DepartmentListingViewModel : BaseViewModel
+    internal interface IEmployeeCreator
     {
     }
 }

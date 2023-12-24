@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Employee_WPF_MVVM_CRUD.Commands
 {
-    class NavigateCommand : BaseCommand
+    internal class NavigateCommand : BaseCommand
     {
         private readonly NavigationStore _navigationStore;
 

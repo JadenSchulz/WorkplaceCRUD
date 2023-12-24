@@ -1,33 +1,34 @@
-﻿using Employee_WPF_MVVM_CRUD.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Employee_WPF_MVVM_CRUD.Models
+namespace Employee_WPF_MVVM_CRUD.Models.DAOs
 {
-    internal class EmployeeDao
+    internal class DepartmentDao
     {
-        public List<Employee> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-        public Employee GetById(long id)
-        {
-            throw new NotImplementedException();
-        }
-        public void Delete(Employee entity)
+        public void Delete(Department entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Save(Employee entity)
+        public List<Department> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Employee entity)
+        public Department GetById(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Save(Department entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Department entity)
         {
             throw new NotImplementedException();
         }

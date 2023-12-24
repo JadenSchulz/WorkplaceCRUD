@@ -10,19 +10,30 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
 
         <!--Data Table-->
         <ScrollViewer Grid.Row="0">
-            <DataGrid>
+            <DataGrid ItemsSource="{Binding Employees}" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <!--Columns-->
+                    <DataGridTextColumn Width ="1*" Header="First Name" Binding="{Binding FirstName}"/>
+                    <DataGridTextColumn Width ="1*" Header="Last Name" Binding="{Binding LastName}"/>
+                    <DataGridTextColumn Width ="1*" Header="Gender" Binding="{Binding Gender}"/>
+                    <DataGridTextColumn Width ="1*" Header="Birth Date" Binding="{Binding BirthDate}"/>
+                    <DataGridTextColumn Width ="1*" Header="Hire Date" Binding="{Binding HireDate}"/>
+                    <DataGridTextColumn Width ="1*" Header="Department" Binding="{Binding Department}"/>
+                    <DataGridTextColumn Width ="1*" Header="Salary" Binding="{Binding BirthDate}"/>
+                    <DataGridTextColumn Width ="1*" Header="Hire Date" Binding="{Binding HireDate}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
 
 
-        <DockPanel Grid.Row="1">
+        <DockPanel Grid.Row="2">
+            <StackPanel>
+                
+            </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <ComboBox Margin="10"/>
                 <Button Content="&lt;&lt;" Width="25"/>
