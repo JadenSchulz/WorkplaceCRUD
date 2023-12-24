@@ -22,7 +22,7 @@ namespace Employee_WPF_MVVM_CRUD.Services.DAOs
         {
 
             List<EmployeeDTO> employees = new List<EmployeeDTO>(); 
-            string query = "SELECT * FROM employees LIMIT 250;";
+            string query = "SELECT * FROM curr_employee_data LIMIT 250;";
 
             DbConnector dbConnector = _dbConnectorFactory.CreateDbConnector();
             List<Dictionary<string, object>> employeeData = dbConnector.Query(query);
@@ -34,6 +34,9 @@ namespace Employee_WPF_MVVM_CRUD.Services.DAOs
                     (string)employee["first_name"],
                     (string)employee["last_name"],
                     (Gender)Enum.Parse(typeof(Gender), (string)employee["gender"]),
+                    (int)employee["salary"],
+                    (int)employee["dept_no"],
+                    (string)employee["title"],
                     (DateTime)employee["birth_date"],
                     (DateTime)employee["hire_date"]
                     ));
@@ -43,10 +46,10 @@ namespace Employee_WPF_MVVM_CRUD.Services.DAOs
 
 
         }
-        public EmployeeDTO? GetById(long id)
+        public EmployeeDTO? GetById(int id, int first, int last)
         {
             EmployeeDTO? employeeDTO = null;
-            string query = $"SELECT * FROM employees WHERE emp_no={id} LIMIT 1;";
+            string query = $"SELECT * FROM employees WHERE emp_no={id} LIMIT {first}, {last};";
 
             DbConnector dbConnector = _dbConnectorFactory.CreateDbConnector();
             List<Dictionary<string, object>> employeeData = dbConnector.Query(query);
@@ -59,6 +62,9 @@ namespace Employee_WPF_MVVM_CRUD.Services.DAOs
                     (string)employee["first_name"],
                     (string)employee["last_name"],
                     (Gender)employee["gender"],
+                    (int)employee["salary"],
+                    (int)employee["dept_no"],
+                    (string)employee["title"],
                     (DateTime)employee["birth_date"],
                     (DateTime)employee["hire_date"]
                     );

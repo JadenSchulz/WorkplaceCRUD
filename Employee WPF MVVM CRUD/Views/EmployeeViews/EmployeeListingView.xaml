@@ -10,7 +10,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="45"/>
-            <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
 
         <!--Data Table-->
@@ -23,14 +22,13 @@
                     <DataGridTextColumn Width ="1*" Header="Birth Date" Binding="{Binding BirthDate}"/>
                     <DataGridTextColumn Width ="1*" Header="Hire Date" Binding="{Binding HireDate}"/>
                     <DataGridTextColumn Width ="1*" Header="Department" Binding="{Binding Department}"/>
-                    <DataGridTextColumn Width ="1*" Header="Salary" Binding="{Binding BirthDate}"/>
-                    <DataGridTextColumn Width ="1*" Header="Hire Date" Binding="{Binding HireDate}"/>
+                    <DataGridTextColumn Width ="1*" Header="Salary" Binding="{Binding Salary}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
 
 
-        <DockPanel Grid.Row="2">
+        <DockPanel Grid.Row="1">
             <StackPanel>
                 
             </StackPanel>

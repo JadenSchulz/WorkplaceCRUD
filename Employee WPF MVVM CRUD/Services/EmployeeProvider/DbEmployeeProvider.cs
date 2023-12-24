@@ -36,7 +36,7 @@ namespace Employee_WPF_MVVM_CRUD.Services.EmployeeProvider
 
         private Employee ToEmployee(EmployeeDTO dto)
         {
-            return new Employee(dto.EmployeeNumber, dto.FirstName, dto.LastName, dto.Gender, dto.BirthDate, dto.HireDate);
+            return new Employee(dto.EmployeeNumber, dto.FirstName, dto.LastName, dto.Gender, dto.Salary, dto.DepartmentId, dto.Title, dto.BirthDate, dto.HireDate);
         }
     }
 }

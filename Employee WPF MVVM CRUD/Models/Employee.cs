@@ -20,8 +20,9 @@ namespace Employee_WPF_MVVM_CRUD.Models
         public Gender Gender { get; set; }
         public DateTime BirthDate { get; set; }
         public DateTime HireDate { get; set; }
-        //public int? Salary { get; set; }
-        //public string? Title { set; get; }
+        public int Salary { get; set; }
+        public string Title { set; get; }
+        public int Department { get; set; }
 
         //public List<Department>? WorksIn { get; set; }
         //public List<Department>? Manages { get; set; }
@@ -35,6 +36,9 @@ namespace Employee_WPF_MVVM_CRUD.Models
             string firstName, 
             string lastName, 
             Gender gender,
+            int salary,
+            int department,
+            string title,
             DateTime birthDate,
             DateTime hireDate
             )
@@ -43,6 +47,9 @@ namespace Employee_WPF_MVVM_CRUD.Models
             FirstName = firstName;
             LastName = lastName;
             Gender = gender;
+            Salary = salary;
+            Department = department;
+            Title = title;
             BirthDate = birthDate;
             HireDate = hireDate;
         }
