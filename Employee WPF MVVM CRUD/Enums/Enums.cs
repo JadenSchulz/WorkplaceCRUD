@@ -8,7 +8,9 @@ namespace Employee_WPF_MVVM_CRUD.Enums
 {
     public enum Gender
     {
-        M = 0,
-        F = 1,
+        NS,
+        M,
+        F,
+        NB,
     }
 }

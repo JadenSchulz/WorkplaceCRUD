@@ -33,7 +33,7 @@ namespace Employee_WPF_MVVM_CRUD.Models
             string lastName, 
             Gender gender,
             int salary,
-            Department department,
+            Department? department,
             string title,
             DateTime birthDate,
             DateTime hireDate
@@ -48,6 +48,11 @@ namespace Employee_WPF_MVVM_CRUD.Models
             Title = title;
             BirthDate = birthDate;
             HireDate = hireDate;
+        }
+
+        public static Employee NewEmployee()
+        {
+            return new Employee(-1, "", "", Gender.NS, 0, null, "", DateTime.Now, DateTime.Now);
         }
 
         public override string ToString()

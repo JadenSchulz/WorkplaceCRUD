@@ -9,7 +9,10 @@
              xmlns:dv="clr-namespace:Employee_WPF_MVVM_CRUD.Views.DepartmentViews"
              xmlns:mvm="clr-namespace:Employee_WPF_MVVM_CRUD.ViewModels.MainViewModels"
              xmlns:evm="clr-namespace:Employee_WPF_MVVM_CRUD.ViewModels.EmployeeViewModels"
-             xmlns:dvm="clr-namespace:Employee_WPF_MVVM_CRUD.ViewModels.DepartmentViewModels">
+             xmlns:dvm="clr-namespace:Employee_WPF_MVVM_CRUD.ViewModels.DepartmentViewModels"
+             xmlns:dialogservice="clr-namespace:Employee_WPF_MVVM_CRUD.Services.Dialogs"
+             xmlns:dialogvm="clr-namespace:Employee_WPF_MVVM_CRUD.ViewModels.Dialogs"
+             xmlns:dialogv="clr-namespace:Employee_WPF_MVVM_CRUD.Views.Dialogs">
     <Application.Resources>
 
         <!--Enums-->
@@ -26,7 +29,9 @@
             <Setter Property="Width" Value="100px"/>
         </Style>
 
-        
+        <DataTemplate DataType="{x:Type dialogvm:NewEmployeeDialogViewModel}">
+            <dialogv:NewEmployeeDialogView/>
+        </DataTemplate>
         
         <!--Main Views-->
         <DataTemplate DataType="{x:Type mvm:MenuViewModel}">

@@ -21,6 +21,8 @@
 
         <!--Data Table-->
         <DataGrid ItemsSource="{Binding Employees}" AutoGenerateColumns="False" MaxHeight="1920"
+                  SelectedItem="{Binding SelectedRow}"
+                  SelectedIndex="{Binding SelectedIndex}"
                   VerticalScrollBarVisibility="Auto"
                   HorizontalScrollBarVisibility="Auto"
                   EnableRowVirtualization="True">
@@ -67,6 +69,8 @@
                                         ItemsSource="{Binding Source={StaticResource departments}}"/>
                 
                 <DataGridTextColumn Width ="1*" Header="Salary" Binding="{Binding Salary}"/>
+
+                <DataGridTextColumn Width ="1*" Header="Title" Binding="{Binding Title}"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -85,9 +89,9 @@
                 <TextBox Margin="5,10,5,10" Width="100"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button>Add Record</Button>
-                <Button>Delete Record</Button>
-                <Button>Commit</Button>
+                <Button Command="{Binding AddCommand}">Add Row</Button>
+                <Button Command="{Binding DeleteCommand}">Delete Row</Button>
+                <Button Command="{Binding CommitCommand}">Commit All</Button>
             </StackPanel>
         </DockPanel>
     </Grid>

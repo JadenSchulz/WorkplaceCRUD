@@ -1,7 +1,9 @@
 ﻿using Employee_WPF_MVVM_CRUD.Enums;
 using Employee_WPF_MVVM_CRUD.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,7 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Items
 {
     internal class EmployeeViewModel : BaseViewModel
     {
+
         private readonly Employee _employee;
         public Employee Employee => _employee;
 
@@ -23,8 +26,8 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Items
             get { return _employee.FirstName; }
             set 
             {
-                NotifyPropertyChanged(FirstName);
                 _employee.FirstName = value;
+                NotifyPropertyChanged(FirstName);
             }
         }
         public string LastName
@@ -32,8 +35,8 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Items
             get { return _employee.LastName; }
             set 
             {
-                NotifyPropertyChanged(LastName);
                 _employee.LastName = value;
+                NotifyPropertyChanged(LastName);
             }
         }
         public Gender Gender
@@ -41,8 +44,8 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Items
             get { return _employee.Gender; }
             set 
             {
-                NotifyPropertyChanged(Gender);
                 _employee.Gender = value;
+                NotifyPropertyChanged(Gender);
             }
         }
         public DateTime BirthDate
@@ -50,8 +53,8 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Items
             get { return _employee.BirthDate; }
             set 
             {
-                NotifyPropertyChanged(BirthDate);
                 _employee.BirthDate = value;
+                NotifyPropertyChanged(BirthDate);
             }
         }
 
@@ -60,8 +63,8 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Items
             get { return _employee.HireDate; }
             set
             {
-                NotifyPropertyChanged(HireDate);
                 _employee.HireDate = value;
+                NotifyPropertyChanged(HireDate);
             }
         }
 
@@ -71,9 +74,9 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Items
             get { return _employee.Department; }
             set
             {
+                _employee.Department = value;
                 NotifyPropertyChanged(Department);
                 NotifyPropertyChanged(DeptName);
-                _employee.Department = value;
             }
         }
 
@@ -82,11 +85,10 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Items
             get { return _employee.Salary; }
             set
             {
-                NotifyPropertyChanged(Salary);
                 _employee.Salary = value;
+                NotifyPropertyChanged(Salary);
             }
         }
-
 
     }
 }

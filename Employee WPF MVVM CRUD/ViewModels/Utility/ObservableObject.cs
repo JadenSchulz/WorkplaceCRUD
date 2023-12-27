@@ -25,7 +25,7 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Utilities
         }
 
         // Used primarily for calculated properties
-        public void NotifyPropertyChanged<T>(T property, [CallerArgumentExpression("property")] string propertyName = "")
+        public virtual void NotifyPropertyChanged<T>(T property, [CallerArgumentExpression("property")] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
