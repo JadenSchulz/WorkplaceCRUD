@@ -33,7 +33,7 @@ namespace Employee_WPF_MVVM_CRUD.Models
             string lastName, 
             Gender gender,
             int salary,
-            Department? department,
+            Department department,
             string title,
             DateTime birthDate,
             DateTime hireDate

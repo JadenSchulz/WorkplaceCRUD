@@ -9,17 +9,32 @@ using System.Windows.Documents;
 
 namespace Employee_WPF_MVVM_CRUD.Models.DAOs
 {
-    internal class DepartmentDao
+    internal class DepartmentDAO
     {
         private readonly DbConnectorFactory _dbConnectorFactory;
 
-        public DepartmentDao(DbConnectorFactory dbConnectorFactory)
+        public DepartmentDAO(DbConnectorFactory dbConnectorFactory)
         {
             _dbConnectorFactory = dbConnectorFactory;
         }
-        public List<Department> GetAll()
+        public List<DepartmentDTO> GetAll()
         {
-            throw new NotImplementedException();
+            List<DepartmentDTO> departmentDTOs = new List<DepartmentDTO>();
+            string query = $"SELECT * FROM departments;";
+
+            DbConnector dbConnector = _dbConnectorFactory.CreateDbConnector();
+            List<Dictionary<string, object>> departmentData = dbConnector.Query(query);
+
+            if (departmentData.Count == 0) return departmentDTOs;
+
+            foreach (var department in departmentData)
+            {
+                departmentDTOs.Add(new DepartmentDTO(
+                (int)department["dept_no"],
+                (string)department["dept_name"]
+                    ));
+            }
+            return departmentDTOs;
         }
 
         public DepartmentDTO? GetById(int id)

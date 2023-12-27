@@ -28,5 +28,23 @@ namespace Employee_WPF_MVVM_CRUD.Models
         {
             return Name.CompareTo(obj);
         }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null) return false;
+
+            var dept = obj as Department;
+            if (dept == null) return false;
+
+            if (dept.Id != Id) return false;  
+            if (dept.Name != Name) return false;
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, Name);
+        }
     }
 }

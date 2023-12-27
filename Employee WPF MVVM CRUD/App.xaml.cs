@@ -1,4 +1,5 @@
 ﻿using Employee_WPF_MVVM_CRUD.Services.DbConnectors;
+using Employee_WPF_MVVM_CRUD.Services.DepartmentProvider;
 using Employee_WPF_MVVM_CRUD.Services.EmployeeProvider;
 using Employee_WPF_MVVM_CRUD.Stores;
 using Employee_WPF_MVVM_CRUD.ViewModels;
@@ -24,13 +25,15 @@ namespace Employee_WPF_MVVM_CRUD
         private readonly DbConnectorFactory _dbConnectorFactory;
 
         private readonly IEmployeeProvider _employeeProvider;
+        private readonly IDepartmentProvider _departmentProvider;
         public App()
         {
             _navigationStore = new NavigationStore();
             _dbConnectorFactory = new DbConnectorFactory("127.0.0.1", 3306, "root", "Pwd12345", "employees");
             _employeeProvider = new DbEmployeeProvider(_dbConnectorFactory);
+            _departmentProvider = new DbDepartmentProvider(_dbConnectorFactory);
 
-            _viewModelFactory = new ViewModelFactory(_navigationStore, _employeeProvider);
+            _viewModelFactory = new ViewModelFactory(_navigationStore, _employeeProvider, _departmentProvider);
         }
 
         protected override void OnStartup(StartupEventArgs e)

@@ -23,15 +23,19 @@ namespace Employee_WPF_MVVM_CRUD.Services.EmployeeProvider
         public List<Employee> GetAllEmployees()
         {
             List<Employee> employees = new List<Employee>();
+
             EmployeeDao employeeDao = new EmployeeDao(_dbConnectorFactory);
-            DepartmentDao departmentDao = new DepartmentDao(_dbConnectorFactory);
-            List <EmployeeDTO> dtos = employeeDao.GetAll();
+            DepartmentDAO departmentDao = new DepartmentDAO(_dbConnectorFactory);
 
-            foreach (EmployeeDTO dto in dtos)
+
+            List <EmployeeDTO> EmployeeDTOs = employeeDao.GetAll();
+            List <DepartmentDTO> departmentDTOs = departmentDao.GetAll();
+
+            List<Department> departments = departmentDTOs.Select(ToDepartment).ToList();
+
+            foreach (EmployeeDTO dto in EmployeeDTOs)
             {
-
-                DepartmentDTO? departmentDTO = departmentDao.GetById(dto.DepartmentId);
-                Department? department = ToDepartment(departmentDTO);
+                Department? department = departments.FirstOrDefault(x => x.Id == dto.DepartmentId);
                 employees.Add(ToEmployee(dto, department));
             }
 
@@ -39,14 +43,12 @@ namespace Employee_WPF_MVVM_CRUD.Services.EmployeeProvider
 
         }
 
-        private Department? ToDepartment(DepartmentDTO? dto)
+        private Department ToDepartment(DepartmentDTO dto)
         {
-            if (dto == null) return null;
-            else return new Department(dto.Id, dto.Name);
+             return new Department(dto.Id, dto.Name);
         }
         private Employee ToEmployee(EmployeeDTO dto, Department? department)
         {
-
             return new Employee(dto.EmployeeNumber, dto.FirstName, dto.LastName, dto.Gender, dto.Salary, department, dto.Title, dto.BirthDate, dto.HireDate);
         }
     }

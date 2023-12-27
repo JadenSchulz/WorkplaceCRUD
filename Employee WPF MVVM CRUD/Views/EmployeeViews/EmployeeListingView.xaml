@@ -9,6 +9,9 @@
     <UserControl.Resources>
         <CollectionViewSource x:Key="employees" Source="{Binding Employees}">
         </CollectionViewSource>
+
+        <CollectionViewSource x:Key="departments" Source="{Binding Departments}">
+        </CollectionViewSource>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -17,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <!--Data Table-->
-        <DataGrid ItemsSource="{Binding Source={StaticResource employees}}" AutoGenerateColumns="False" MaxHeight="1920"
+        <DataGrid ItemsSource="{Binding Employees}" AutoGenerateColumns="False" MaxHeight="1920"
                   VerticalScrollBarVisibility="Auto"
                   HorizontalScrollBarVisibility="Auto"
                   EnableRowVirtualization="True">
@@ -58,7 +61,11 @@
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTextColumn Width ="1*" Header="Department" Binding="{Binding Department}" SortMemberPath="DeptName"/>
+                <DataGridComboBoxColumn Width ="1*" Header="Department" 
+                                        SelectedItemBinding="{Binding Department}" 
+                                        SortMemberPath="DeptName"
+                                        ItemsSource="{Binding Source={StaticResource departments}}"/>
+                
                 <DataGridTextColumn Width ="1*" Header="Salary" Binding="{Binding Salary}"/>
             </DataGrid.Columns>
         </DataGrid>

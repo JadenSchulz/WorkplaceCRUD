@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Employee_WPF_MVVM_CRUD.ViewModels.Sources
 {
-    internal class EmployeesSource : ObservableCollection<EmployeeViewModel>
+    internal class DepartmentsSource : ObservableCollection<DepartmentViewModel>
     {
-        public EmployeesSource(List<Employee> employees) 
-            : base(employees
-                .Select(employee => new EmployeeViewModel(employee))
-                .ToList()) { }
+        public DepartmentsSource(List<Department> departments) 
+            : base(departments
+               .Select(department => new DepartmentViewModel(department))
+               .ToList()) { }
     }
 }
