@@ -1,6 +1,8 @@
 ﻿using Employee_WPF_MVVM_CRUD.Models;
 using Employee_WPF_MVVM_CRUD.Services.EmployeeProvider;
 using Employee_WPF_MVVM_CRUD.Stores;
+using Employee_WPF_MVVM_CRUD.ViewModels.Items;
+using Employee_WPF_MVVM_CRUD.ViewModels.Sources;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,12 +15,12 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.EmployeeViewModels
     internal class EmployeeListingViewModel : BaseViewModel
     {
         private readonly IEmployeeProvider _employeeProvider;
-        private readonly ObservableCollection<Employee> _employees;
-        public IEnumerable<Employee> Employees => _employees;
+        private readonly EmployeesSource _employees;
+        public IEnumerable<EmployeeViewModel> Employees => _employees;
         public EmployeeListingViewModel(IEmployeeProvider employeeProvider)
         {
             _employeeProvider = employeeProvider;
-            _employees = new ObservableCollection<Employee>(employeeProvider.GetAllEmployees());
+            _employees = new EmployeesSource(employeeProvider.GetAllEmployees());
         }
     }
 }

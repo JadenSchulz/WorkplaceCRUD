@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Employee_WPF_MVVM_CRUD.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,6 @@ using System.Threading.Tasks;
 
 namespace Employee_WPF_MVVM_CRUD.Models
 {
-    public enum Gender
-    {
-        F,
-        M
-    }
     internal class Employee
     {
         public int EmployeeNumber { get; set; }
@@ -22,7 +18,7 @@ namespace Employee_WPF_MVVM_CRUD.Models
         public DateTime HireDate { get; set; }
         public int Salary { get; set; }
         public string Title { set; get; }
-        public int Department { get; set; }
+        public Department? Department { get; set; }
 
         //public List<Department>? WorksIn { get; set; }
         //public List<Department>? Manages { get; set; }
@@ -37,7 +33,7 @@ namespace Employee_WPF_MVVM_CRUD.Models
             string lastName, 
             Gender gender,
             int salary,
-            int department,
+            Department? department,
             string title,
             DateTime birthDate,
             DateTime hireDate

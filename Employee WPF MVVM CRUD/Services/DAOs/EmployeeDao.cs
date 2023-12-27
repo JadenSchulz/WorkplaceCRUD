@@ -1,4 +1,5 @@
-﻿using Employee_WPF_MVVM_CRUD.Models;
+﻿using Employee_WPF_MVVM_CRUD.Enums;
+using Employee_WPF_MVVM_CRUD.Models;
 using Employee_WPF_MVVM_CRUD.Models.DTOs;
 using Employee_WPF_MVVM_CRUD.Services.DbConnectors;
 using System;
