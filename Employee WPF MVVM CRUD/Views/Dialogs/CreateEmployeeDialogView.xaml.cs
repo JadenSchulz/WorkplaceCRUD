@@ -18,9 +18,9 @@ namespace Employee_WPF_MVVM_CRUD.Views.Dialogs
     /// <summary>
     /// Interaction logic for NewEmployeeDialogView.xaml
     /// </summary>
-    public partial class NewEmployeeDialogView : UserControl
+    public partial class CreateEmployeeDialogView : UserControl
     {
-        public NewEmployeeDialogView()
+        public CreateEmployeeDialogView()
         {
             InitializeComponent();
         }

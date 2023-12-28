@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,18 +16,19 @@ using System.Windows.Input;
 
 namespace Employee_WPF_MVVM_CRUD.ViewModels.Dialogs
 {
-    internal class NewEmployeeDialogViewModel : BaseDialogViewModel<EmployeeViewModel>
+    internal class CreateEmployeeDialogViewModel : BaseDialogViewModel<EmployeeViewModel>
     {
         private readonly ObservableCollection<Department> _departments;
         public IEnumerable<Department> Departments => _departments;
-        public EmployeeViewModel NewEmployee { get; set; }
+
+        private readonly EmployeeViewModel _newEmployee;
+        public EmployeeViewModel NewEmployee => _newEmployee;   
         public ICommand AddCommand { get; set; }
         public ICommand CancelCommand { get; set; }
-        public NewEmployeeDialogViewModel(IEnumerable<Department> departments)
+        public CreateEmployeeDialogViewModel(IEnumerable<Department> departments, string title) : base(title) 
         {
             _departments = new ObservableCollection<Department>(departments);
-
-            NewEmployee = new EmployeeViewModel(Employee.NewEmployee());
+            _newEmployee = new EmployeeViewModel(Employee.NewEmployee());
 
             AddCommand = new RelayCommand<IDialogWindow>(Add, CanAdd);
             CancelCommand = new RelayCommand<IDialogWindow>(Cancel);
@@ -40,13 +42,14 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.Dialogs
 
         private void Add(IDialogWindow window)
         {
-            CloseDialogWithResult(window, null);
+            CloseDialogWithResult(window, NewEmployee);
         }
 
         private bool CanAdd(IDialogWindow window)
         {
-            return true;
+            return !NewEmployee.HasErrors;
         }
 
     }
+
 }

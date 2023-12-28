@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Employee_WPF_MVVM_CRUD.Views.EmployeeViews"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -27,10 +28,26 @@
                   HorizontalScrollBarVisibility="Auto"
                   EnableRowVirtualization="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Width ="1*" Header="First Name" Binding="{Binding FirstName}"/>
-                <DataGridTextColumn Width ="1*" Header="Last Name" Binding="{Binding LastName}"/>
+
+                <DataGridTextColumn Width ="1*" Header="First Name" 
+                                    Validation.ErrorTemplate="{StaticResource fieldErrorTemplate}"
+                                    Binding="{Binding FirstName, 
+                                    ValidatesOnExceptions=True,
+                                    ValidatesOnNotifyDataErrors=True,
+                                    UpdateSourceTrigger=LostFocus}"/>
+
+                <DataGridTextColumn Width ="1*" Header="Last Name" 
+                                    Validation.ErrorTemplate="{StaticResource fieldErrorTemplate}"
+                                    Binding="{Binding LastName, 
+                                    ValidatesOnExceptions=True,
+                                    ValidatesOnNotifyDataErrors=True,
+                                    UpdateSourceTrigger=LostFocus}"/>
+                
                 <DataGridComboBoxColumn Width ="1*" Header="Gender" 
-                                        SelectedItemBinding="{Binding Gender}"
+                                        SelectedItemBinding="{Binding Gender, 
+                                        ValidatesOnExceptions=True,
+                                        ValidatesOnNotifyDataErrors=True,
+                                        UpdateSourceTrigger=LostFocus}"
                                         ItemsSource="{Binding Source={StaticResource gender}}"/>
 
                 <DataGridTemplateColumn Width ="1*" Header="Birth Date" 
@@ -43,7 +60,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <DatePicker SelectedDate="{Binding BirthDate}" />
+                            <DatePicker SelectedDate="{Binding BirthDate}" DisplayDateEnd="{x:Static sys:DateTime.Now}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -58,19 +75,33 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <DatePicker SelectedDate="{Binding HireDate}" />
+                            <DatePicker SelectedDate="{Binding HireDate}" DisplayDateEnd="{x:Static sys:DateTime.Now}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
 
                 <DataGridComboBoxColumn Width ="1*" Header="Department" 
-                                        SelectedItemBinding="{Binding Department}" 
+                                        Validation.ErrorTemplate="{StaticResource dropdownErrorTemplate}"
+                                        SelectedItemBinding="{Binding Department, 
+                                        ValidatesOnExceptions=True,
+                                        ValidatesOnNotifyDataErrors=True,
+                                        UpdateSourceTrigger=LostFocus}" 
                                         SortMemberPath="DeptName"
                                         ItemsSource="{Binding Source={StaticResource departments}}"/>
-                
-                <DataGridTextColumn Width ="1*" Header="Salary" Binding="{Binding Salary}"/>
 
-                <DataGridTextColumn Width ="1*" Header="Title" Binding="{Binding Title}"/>
+                <DataGridTextColumn Width ="1*" Header="Salary" 
+                                    Binding="{Binding Salary, 
+                                    ValidatesOnExceptions=True,
+                                    ValidatesOnNotifyDataErrors=True,
+                                    UpdateSourceTrigger=PropertyChanged,
+                                    Converter={StaticResource stringToCurrencyConverter},
+                                    StringFormat={}{0:c0}}"/>
+
+                <DataGridTextColumn Width ="1*" Header="Title" 
+                                    Binding="{Binding Title, 
+                                    ValidatesOnExceptions=True,
+                                    ValidatesOnNotifyDataErrors=True,
+                                    UpdateSourceTrigger=LostFocus}"/>
             </DataGrid.Columns>
         </DataGrid>
 

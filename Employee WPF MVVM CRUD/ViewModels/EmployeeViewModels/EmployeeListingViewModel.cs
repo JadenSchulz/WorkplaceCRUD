@@ -62,7 +62,7 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.EmployeeViewModels
 
             AddCommand = new RelayCommand(AddRecord);
             DeleteCommand = new RelayCommand(DeleteRecord, RowSelected);
-            CommitCommand = new RelayCommand(CommitRecords);
+            CommitCommand = new RelayCommand(CommitRecords, CanCommit);
 
         }
 
@@ -80,19 +80,26 @@ namespace Employee_WPF_MVVM_CRUD.ViewModels.EmployeeViewModels
 
         private void AddRecord()
         {
-            //EmployeeViewModel newRecord = new EmployeeViewModel(Employee.NewEmployee());
-            //_employees.Insert((SelectedIndex == -1) ? 0 : SelectedIndex, newRecord);
-            //_addedEmployees.Add(newRecord);
-
-            // inject this later
             DialogService ds = new DialogService();
-            var result = ds.OpenDialog(new NewEmployeeDialogViewModel(_departments));
+            var result = ds.OpenDialog(new CreateEmployeeDialogViewModel(_departments, "New Employee"));
 
+            if (result != null)
+            {
+                _employees.Insert((SelectedIndex == -1) ? 0 : SelectedIndex, result);
+                _addedEmployees.Add(result);
+            }
         }
 
         private void CommitRecords()
         {
             throw new NotImplementedException();
+        }
+
+        private bool CanCommit()
+        {
+            if (Employees.FirstOrDefault(x => x.HasErrors == true) == null) 
+                return false;
+            return true;
         }
 
         private bool RowSelected()
